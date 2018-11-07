@@ -1,10 +1,12 @@
 const assert = require('assert');
-const waterUseChart = require('../views/water_use_chart.js');
+const WaterUseChart = require('../views/water_use_chart.js');
 
 describe('waterUseChart', function() {
   let data;
+  let chart;
 
   beforeEach(function() {
+    chart = new WaterUseChart('fake_container')
     data = [
       {
         name: "avgUKUser",
@@ -22,17 +24,17 @@ describe('waterUseChart', function() {
         bathe:92,
         diet: 4000
       }
-    ];
+    ]
+  })
 
   it('should sum visible (domestic) water use', function() {
-    const expected = prepareVisWaterUse(data);
+    const expected = chart.prepareVisWaterUse(data); //does function need an object to run on?
     assert.deepStrictEqual([145, 142], expected);
   });
 
   it('should create an array of invis water use', function() {
-    const expected = prepareInvisWaterUse(data);
+    const expected = chart.prepareInvisWaterUse(data);
     assert.deepStrictEqual([4000, 2000, 1500, 4000], expected);
   });
 
-
-});
+})
