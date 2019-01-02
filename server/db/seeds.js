@@ -1,7 +1,9 @@
 use water_data;
 db.dropDatabase();
 
-db.water_cycle.insertMany([
+db.water_cycle.insertMany(
+
+  [
   {
     name: "Ocean",
     description: "Did you know that most of the earth's water is held in the oceans? More than 96% of all water on earth is ocean water!!",
@@ -47,9 +49,11 @@ db.water_cycle.insertMany([
     description: "We use water every day! People use water for all kinds of things; We drink it, we shower or take baths, we wash clothes, we grow food, we use it to run factories, and we use it to make our toilets work! ",
     image: "./images/Cities.jpg"
   }
-]);
+]
+);
 
-db.water_use.insertMany([
+db.water_use.insertMany(
+  [
   {
     name: "avgUKUser",
     teeth: 15,
@@ -66,9 +70,11 @@ db.water_use.insertMany([
     bathe:0,
     diet: 0
   }
-]);
+]
+);
 
-db.quiz.insertMany([
+db.quiz.insertMany(
+  [
   {
     question: "What is word for water that falls from clouds in the atmosphere?",
     answers: {
@@ -98,4 +104,6 @@ db.quiz.insertMany([
     correctAnswer: "d"
   }
 
-]);
+]
+
+);
